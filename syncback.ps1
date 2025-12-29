@@ -16,12 +16,11 @@ Write-Host "PlaceId: $PlaceId"
 
 # Download rbxl from Roblox
 $Url = "https://assetdelivery.roblox.com/v1/asset/?id=$PlaceId"
-$Session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
-$Cookie = New-Object System.Net.Cookie(".ROBLOSECURITY", $ROBLOSECURITY, "/", ".roblox.com")
-$Session.Cookies.Add($Cookie)
-
 Write-Host "Downloading $Url..."
-Invoke-WebRequest -Uri $Url -WebSession $Session -OutFile $ProjectRbxl
+$ProgressPreference = 'SilentlyContinue'
+$client = New-Object System.Net.WebClient
+$client.Headers.Add('Cookie', ".ROBLOSECURITY=$ROBLOSECURITY")
+$client.DownloadFile($Url, $ProjectRbxl)
 
 if ($args.Count -eq 0) {
   rojo syncback --non-interactive --input $ProjectRbxl $ProjectJsonFile
