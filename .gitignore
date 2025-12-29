@@ -7,10 +7,13 @@
 /*.rbxl.lock
 
 # Sourcemap
-sourcemap.json
+/sourcemap.json
 
 # IDEs
-.idea
+/.idea
 
 # .env
-.env
+/.env
+
+# rojo
+/rojo.exe
