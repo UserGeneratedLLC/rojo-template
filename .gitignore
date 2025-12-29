@@ -11,3 +11,6 @@ sourcemap.json
 
 # IDEs
 .idea
+
+# .env
+.env
