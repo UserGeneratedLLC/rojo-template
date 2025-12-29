@@ -16,13 +16,10 @@ Write-Host "PlaceId: $PlaceId"
 
 # Download rbxl from Roblox
 $Url = "https://assetdelivery.roblox.com/v1/asset/?id=$PlaceId"
-Write-Host "Downloading $Url..."
-
-# Download rbxl from Roblox
-$Url = "https://assetdelivery.roblox.com/v1/asset/?id=$PlaceId"
 $Session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
 $Cookie = New-Object System.Net.Cookie(".ROBLOSECURITY", $ROBLOSECURITY, "/", ".roblox.com")
 $Session.Cookies.Add($Cookie)
+
 Write-Host "Downloading $Url..."
 Invoke-WebRequest -Uri $Url -WebSession $Session -OutFile $ProjectRbxl
 
