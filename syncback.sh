@@ -29,7 +29,11 @@ echo "PlaceId: $PlaceId"
 # Download rbxl from Roblox
 Url="https://assetdelivery.roblox.com/v1/asset/?id=$PlaceId"
 echo "Downloading $Url..."
-curl -fSL --compressed -o "$ProjectRbxl" -H "Cookie: .ROBLOSECURITY=${ROBLOSECURITY}" "$Url"
+curl -fSL --compressed -o "$ProjectRbxl" \
+  -H "Cookie: .ROBLOSECURITY=${ROBLOSECURITY}" \
+  -H "Cache-Control: no-cache, no-store" \
+  -H "Pragma: no-cache" \
+  "$Url"
 
 # Delete src/ completely and recreate directory structure if --clean specified
 if [ "$DoClean" = true ]; then

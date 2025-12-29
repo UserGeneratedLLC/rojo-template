@@ -32,7 +32,10 @@ $Cookie = New-Object System.Net.Cookie(".ROBLOSECURITY", $ROBLOSECURITY, "/", ".
 $Session.Cookies.Add($Cookie)
 
 Write-Host "Downloading $Url..."
-Invoke-WebRequest -Uri $Url -WebSession $Session -OutFile $ProjectRbxl
+Invoke-WebRequest -Uri $Url -WebSession $Session -OutFile $ProjectRbxl -Headers @{
+  "Cache-Control" = "no-cache, no-store"
+  "Pragma" = "no-cache"
+}
 
 # Delete src/ completely and recreate directory structure if --clean specified
 if ($DoClean) {
