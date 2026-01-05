@@ -47,6 +47,7 @@ if ($DoClean) {
   New-Item -ItemType Directory -Path "src/ReplicatedStorage" -Force | Out-Null
   New-Item -ItemType Directory -Path "src/ServerScriptService" -Force | Out-Null
   New-Item -ItemType Directory -Path "src/ServerStorage" -Force | Out-Null
+  New-Item -ItemType Directory -Path "src/StarterGui" -Force | Out-Null
   New-Item -ItemType Directory -Path "src/StarterPlayer/StarterCharacterScripts" -Force | Out-Null
   New-Item -ItemType Directory -Path "src/StarterPlayer/StarterPlayerScripts" -Force | Out-Null
   New-Item -ItemType Directory -Path "src/Workspace" -Force | Out-Null

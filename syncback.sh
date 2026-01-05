@@ -43,6 +43,7 @@ if [ "$DoClean" = true ]; then
   mkdir -p src/ReplicatedStorage
   mkdir -p src/ServerScriptService
   mkdir -p src/ServerStorage
+  mkdir -p src/StarterGui
   mkdir -p src/StarterPlayer/StarterCharacterScripts
   mkdir -p src/StarterPlayer/StarterPlayerScripts
   mkdir -p src/Workspace

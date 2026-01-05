@@ -33,6 +33,10 @@
       "$className": "ServerStorage",
       "$path": "src/ServerStorage"
     },
+    "StarterGui": {
+      "$className": "StarterGui",
+      "$path": "src/StarterGui"
+    },
     "StarterPlayer": {
       "$className": "StarterPlayer",
       "StarterCharacterScripts": {
